@@ -7,8 +7,8 @@ public:
         sort(piles.begin(), piles.end());
         int res{};
         
-        for(int i{}, j = piles.size() - 2; i < piles.size()/3; i++, j-=2){
-            res+=piles[j];
+        for(int j = piles.size() - 1;j >= piles.size()/3; j-=2){
+            res+=piles[j - 1];
         }
         return res;
     }
