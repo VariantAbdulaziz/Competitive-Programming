@@ -1,6 +1,6 @@
 // source: https://leetcode.com/problems/fizz-buzz/
 
-
+// strategy: ad hoc solution
 class Solution {
 public:
     vector<string> fizzBuzz(int n) {

@@ -1,6 +1,6 @@
 // source: https://leetcode.com/problems/number-of-good-pairs/submissions/
 
-// policy: semaphores
+// strategy: semaphores
 class Solution {
 public:
     int numIdenticalPairs(vector<int>& nums) {

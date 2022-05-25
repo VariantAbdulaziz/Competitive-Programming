@@ -1,5 +1,6 @@
 // source: https://www.hackerrank.com/challenges/insertionsort1/problem
 
+// strategy: ad hoc solution
 void print(int n, const vector<int>& arr){
     
     for(int i{}; i < n; i ++){

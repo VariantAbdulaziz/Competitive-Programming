@@ -1,5 +1,6 @@
 // source: https://leetcode.com/problems/find-target-indices-after-sorting-array/submissions/
 
+// strategy: sorting | count sort
 class Solution {
 public:
     vector<int> targetIndices(vector<int>& nums, int target) {

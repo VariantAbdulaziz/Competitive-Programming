@@ -1,5 +1,6 @@
-// // source: https://www.hackerrank.com/challenges/ctci-bubble-sort/problem
+// source: https://www.hackerrank.com/challenges/ctci-bubble-sort/problem
 
+// strategy: iterative
 void countSwaps(vector<int> a) {
 
     int n = a.size();

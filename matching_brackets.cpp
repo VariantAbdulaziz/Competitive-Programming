@@ -1,6 +1,6 @@
 // source: https://leetcode.com/problems/valid-parentheses/
 
-// policy: stack
+// strategy: stack
 class Solution {
 public:
     bool isValid(string s) {

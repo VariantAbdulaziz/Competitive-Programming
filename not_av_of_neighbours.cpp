@@ -1,5 +1,6 @@
 // source: https://leetcode.com/problems/array-with-elements-not-equal-to-average-of-neighbors/
 
+// strategy: sorting
 class Solution {
 public:
     string largestNumber(vector<int>& nums) {

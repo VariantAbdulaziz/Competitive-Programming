@@ -1,6 +1,6 @@
 // source: https://leetcode.com/problems/max-number-of-k-sum-pairs/
 
-// policy: sorting | two pointers
+// strategy: sorting | two pointers
 class Solution {
 public:
     int maxOperations(vector<int>& nums, int k) {

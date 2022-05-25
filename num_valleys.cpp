@@ -1,6 +1,6 @@
 // source: https://www.hackerrank.com/challenges/counting-valleys/problem
 
-// policy: semaphores
+// strategy: semaphores
 int countingValleys(int steps, string path) {
     int numVals{}, height{}, semaphore{};
     for(auto dir: path){

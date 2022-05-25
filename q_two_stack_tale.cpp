@@ -1,6 +1,6 @@
 // source: https://leetcode.com/problems/implement-queue-using-stacks/
 
-// policy: stack
+// strategy: stack
 class MyQueue {
 public:
     MyQueue() {

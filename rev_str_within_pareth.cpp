@@ -1,6 +1,6 @@
 // source: https://leetcode.com/problems/reverse-substrings-between-each-pair-of-parentheses/
 
-// policy: deque
+// strategy: deque
 class Solution {
 public:
     string reverseParentheses(string s) {

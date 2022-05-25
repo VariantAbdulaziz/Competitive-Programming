@@ -1,6 +1,6 @@
 // source: https://leetcode.com/problems/minimize-maximum-pair-sum-in-array/
 
-// policy: sorting | two pointers
+// strategy: sorting | two pointers
 class Solution {
 public:
     int minPairSum(vector<int>& nums) {

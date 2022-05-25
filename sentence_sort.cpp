@@ -1,5 +1,6 @@
 // source: https://leetcode.com/problems/sorting-the-sentence/
 
+// strategy: sorting
 class Solution {
 public:
     string sortSentence(string s) {

@@ -1,5 +1,6 @@
 // source: https://leetcode.com/problems/largest-number/
 
+// strategy: sorting
 class Solution {
 public:
     string largestNumber(vector<int>& nums) {

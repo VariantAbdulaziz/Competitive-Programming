@@ -1,5 +1,6 @@
 // source: https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/submissions/
 
+// strategy: prefix sum
 class Solution {
 public:
     vector<int> smallerNumbersThanCurrent(vector<int>& nums) {

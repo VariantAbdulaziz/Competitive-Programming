@@ -1,6 +1,6 @@
 // source: https://leetcode.com/problems/evaluate-reverse-polish-notation
 
-// policy: stack
+// strategy: stack
 class Solution {
 public:
     int compute(int l, int r, string op){

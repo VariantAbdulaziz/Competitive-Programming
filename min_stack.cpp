@@ -1,6 +1,6 @@
 // source: https://leetcode.com/problems/min-stack/
 
-// policy: linear search
+// strategy: linear search
 class MinStack {
 public:
     MinStack() {

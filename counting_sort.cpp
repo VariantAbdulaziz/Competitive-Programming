@@ -1,5 +1,6 @@
 // source: https://www.hackerrank.com/challenges/countingsort1/problem
 
+// strategy: book keeping
 vector<int> countingSort(vector<int> arr) {
     #define SIZE 100
     vector<int> result(SIZE, 0);

@@ -1,6 +1,6 @@
 // source: https://codeforces.com/problemset/problem/1/A
 
-// policy: an ad hoc solution
+// strategy: an ad hoc solution
 #include <cmath>
 #include <iostream>
     

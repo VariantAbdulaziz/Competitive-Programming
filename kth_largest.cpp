@@ -1,5 +1,6 @@
 // solution: https://leetcode.com/problems/find-the-kth-largest-integer-in-the-array/submissions/
 
+// strategy: sorting
 class Solution {
 public:
     string kthLargestNumber(vector<string>& nums, int k) {

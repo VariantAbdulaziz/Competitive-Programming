@@ -1,6 +1,6 @@
 // source: https://leetcode.com/problems/arithmetic-subarrays/submissions/
 
-// policy: iterative
+// strategy: iterative
 class Solution {
 public:
     bool isArithmetic(vector<int>& nums){

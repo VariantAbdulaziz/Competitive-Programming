@@ -1,6 +1,6 @@
 // source: https://leetcode.com/problems/find-original-array-from-doubled-array/
 
-// policy: sorting | semaphores
+// strategy: sorting | semaphores
 class Solution {
 public:
     vector<int> findOriginalArray(vector<int>& changed) {

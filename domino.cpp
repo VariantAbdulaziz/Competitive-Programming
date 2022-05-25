@@ -1,5 +1,6 @@
 // source: https://codeforces.com/problemset/problem/50/A
 
+// strategy: ad hoc solution
 #include <iostream>
  
 using namespace std;

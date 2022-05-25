@@ -1,5 +1,6 @@
 // solution: https://practice.geeksforgeeks.org/problems/selection-sort/1
 
+// strategy: ad hoc solution
 class Solution{
 public:
     int select(int arr[], int n, int i)

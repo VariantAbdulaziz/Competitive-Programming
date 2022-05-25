@@ -1,5 +1,6 @@
 // source: https://www.hackerrank.com/challenges/grading/submissions/code/269658590
 
+// strategy: ad hoc solution
 vector<int> gradingStudents(vector<int> grades) {
 
     vector<int> finalMarks;

@@ -1,6 +1,6 @@
 // source: https://leetcode.com/problems/top-k-frequent-elements/
 
-// policy: frequency distribution | map | priority queue
+// strategy: frequency distribution | map | priority queue
 class Solution {
 public:
     vector<int> topKFrequent(vector<int>& nums, int k) {

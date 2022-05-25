@@ -1,6 +1,6 @@
 // source: https://leetcode.com/problems/pancake-sorting/
 
-// policy: dictionary
+// strategy: dictionary
 class Solution {
 public:
     void flip(vector<int>& dict, int flipper){

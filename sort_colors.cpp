@@ -1,5 +1,6 @@
 // source: https://leetcode.com/problems/sort-colors/submissions/
 
+// strategy: sorting | count sort
 class Solution {
 public:
     void sortColors(vector<int>& nums) {

@@ -1,6 +1,6 @@
 // source: https://leetcode.com/problems/reduce-array-size-to-the-half/submissions/
 
-// policy: frequency distribution | priority queue
+// strategy: frequency distribution | priority queue
 class Solution {
 public:
     int minSetSize(vector<int>& arr) {

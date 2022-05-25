@@ -1,6 +1,6 @@
 // source: https://leetcode.com/problems/frequency-of-the-most-frequent-element/
 
-// policy: sort | prefix sum | sliding widnow
+// strategy: sort | prefix sum | sliding widnow
 class Solution {
 public:
     void prefixSum(const vector<int>& nums, vector<long long>& preSum){
