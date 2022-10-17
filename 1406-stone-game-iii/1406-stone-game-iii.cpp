@@ -21,8 +21,7 @@ public:
             }
             return res;
         };
-        int total = 0;
-        for(auto stone: stoneValue) total += stone;
+        int total = accumulate(begin(stoneValue), end(stoneValue), 0);
         int alice_score = dp(dp, 0, 1);
         int bob_score = total - alice_score;
         return alice_score == bob_score? "Tie": alice_score > bob_score? "Alice": "Bob";
