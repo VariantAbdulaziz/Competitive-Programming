@@ -1,7 +1,8 @@
+#define DIRECTIONS 4
+
 class Solution {
 public:
     vector<vector<int>> generateMatrix(int n) {
-        const int DIRECTIONS = 4;
         vector<vector<int>> spiral_matrix(n, vector<int>(n, -1));
         vector<pair<int, int>> directions = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
         int x=0;
