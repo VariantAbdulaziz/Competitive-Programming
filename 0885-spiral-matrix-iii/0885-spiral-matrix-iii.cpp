@@ -4,15 +4,16 @@ class Solution {
 public:
     vector<vector<int>> spiralMatrixIII(int rows, int cols, int rStart, int cStart) {
         
-        vector<vector<int>> spiral(rows, vector<int>(cols)), path;
+        vector<vector<int>> path;
         vector<pair<int, int>> directions = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
 
         int x=rStart, y=cStart;
         int cur_direction = 0;
+        int populated = 1;
         
-        while(!x_filled(x, rows, cols, spiral) || !y_filled(x, rows, cols, spiral)){            
+        while(populated <= (rows*cols)){            
             if(in_bound(x, y, rows, cols)){
-                spiral[x][y]++;
+                populated++;
                 path.push_back({x, y});
             }
             auto [dx, dy] = directions[cur_direction];
@@ -26,13 +27,7 @@ public:
         }
         return path;
     }
-private:
-    bool x_filled(int x, int rows, int cols, vector<vector<int>>& spiral){
-        return x >= 0 && x < rows && spiral[x][0] && spiral[x][cols-1];
-    }
-    bool y_filled(int y, int rows, int cols, vector<vector<int>>& spiral){
-        return y >= 0 && y < cols && spiral[0][y] && spiral[rows-1][y];
-    }
+
     bool in_bound(int x, int y, int rows, int cols){
         return x >= 0 && x < rows && y >= 0 && y < cols;
     }
