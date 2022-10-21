@@ -33,7 +33,7 @@ public:
         return bucket[rand()%bucket.size()];
     }
     vector<int> bucket;
-    unordered_map<int, set<int>> book;
+    unordered_map<int, unordered_set<int>> book;
 };
 
 /**
