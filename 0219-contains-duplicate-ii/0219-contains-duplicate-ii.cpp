@@ -2,7 +2,7 @@ class Solution {
 public:
     bool containsNearbyDuplicate(vector<int>& nums, int k) {
         
-        set<int> window;
+        unordered_set<int> window;
         for(int r=0; r<nums.size(); r++){
             int l = r - k - 1;
             if(l >= 0) window.erase(nums[l]);
