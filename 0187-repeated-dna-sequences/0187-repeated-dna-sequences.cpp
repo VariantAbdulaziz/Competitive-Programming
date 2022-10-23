@@ -1,4 +1,4 @@
-#define range(c, a, b) (c).begin()+(a), (c).begin()+(b)
+#define range(c, a) (c).begin()+(a), (c).end()
 
 class Solution {
 public:
@@ -11,7 +11,7 @@ public:
             if(r >= 9){
                 if (book.count(window) && book[window] == 1) res.push_back(window);
                 book[window]++;
-                window = {range(window, 1, 10)};
+                window = {range(window, 1)};
             }
         }
         return res;
