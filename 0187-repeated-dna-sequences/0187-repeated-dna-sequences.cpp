@@ -11,7 +11,7 @@ public:
             if(r >= 9){
                 if (book.count(window) && book[window] == 1) res.push_back(window);
                 book[window]++;
-                window = {range(window, 1)};
+                window = string(range(window, 1));
             }
         }
         return res;
