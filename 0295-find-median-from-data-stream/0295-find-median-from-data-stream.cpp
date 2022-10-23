@@ -5,13 +5,10 @@ public:
     }
     
     void addNum(int num) {
-        before.push(num);
+        if(before.empty() || num < before.top())
+            before.push(num);
+        else after.push(num);
         
-        if(!before.empty() && !after.empty() && before.top() > after.top()){
-            int shifted = before.top();
-            before.pop();
-            after.push(shifted);
-        }
         if(before.size() > after.size() + 1){
             int shifted = before.top();
             before.pop();
