@@ -1,11 +1,11 @@
 class Solution {
 public:
     vector<bool> checkIfPrerequisite(int numCourses, vector<vector<int>>& prerequisites, vector<vector<int>>& queries) {
-        deque<deque<bool>> connections(numCourses, deque<bool>(numCourses, false));
+        vector<vector<char>> connections(numCourses, vector<char>(numCourses, 0));
         
         for(auto edge: prerequisites){
             int a = edge[0], b = edge[1];
-            connections[a][b] = true;
+            connections[a][b] = 1;
         }
         for(int k=0; k<numCourses; k++){
             for(int i=0; i<numCourses; i++){
