@@ -6,7 +6,7 @@ public:
         }
         return link[p];
     }
-    bool unite(vector<int>& link, vector<int>& rank, int l, int r){
+    bool cluster(vector<int>& link, vector<int>& rank, int l, int r){
         int lr = find(link, l);
         int rr = find(link, r);
         if(lr == rr) return false;
@@ -21,7 +21,7 @@ public:
         vector<int> rank(edges.size() + 1, 1);
         
         for(auto edge: edges){
-            if(!unite(link, rank, edge[0], edge[1])) return edge;
+            if(!cluster(link, rank, edge[0], edge[1])) return edge;
         }
         return vector<int>();
     }
