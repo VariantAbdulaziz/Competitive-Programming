@@ -14,10 +14,11 @@ public:
                 }
             }
         }
-        vector<bool> result;
+        vector<bool> result(queries.size());
+        int query_no = 0;
         for(auto query: queries){
             int u = query[0], v = query[1];
-            result.push_back(connections[u][v]);
+            result[query_no++] = connections[u][v];
         }
         return result;
     }
