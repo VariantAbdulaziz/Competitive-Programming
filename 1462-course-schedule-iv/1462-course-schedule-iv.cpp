@@ -1,7 +1,7 @@
 class Solution {
 public:
     vector<bool> checkIfPrerequisite(int numCourses, vector<vector<int>>& prerequisites, vector<vector<int>>& queries) {
-        vector<vector<char>> connections(numCourses, vector<char>(numCourses, 0));
+        vector<vector<char>> connections(numCourses, vector<char>(numCourses));
         
         for(auto edge: prerequisites){
             int a = edge[0], b = edge[1];
@@ -14,11 +14,10 @@ public:
                 }
             }
         }
-        vector<bool> result(queries.size());
-        int query_no = 0;
+        vector<bool> result; result.reserve(queries.size());
         for(auto query: queries){
             int u = query[0], v = query[1];
-            result[query_no++] = connections[u][v];
+            result.push_back(connections[u][v]);
         }
         return result;
     }
