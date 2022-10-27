@@ -7,13 +7,15 @@ public:
             int a = edge[0], b = edge[1];
             connections[a][b] = 1;
         }
-        for(int k=0; k<numCourses; k++){
-            for(int i=0; i<numCourses; i++){
-                for(int j=0; j<numCourses; j++){
-                    connections[i][j] = connections[i][j] || (connections[i][k] && connections[k][j]);
+        for(int intermidiate=0; intermidiate<numCourses; intermidiate++){
+            for(int pre=0; pre<numCourses; pre++){
+                for(int course=0; course<numCourses; course++){
+                    connections[pre][course] = connections[pre][course] ||
+                                                (connections[pre][intermidiate] && connections[intermidiate][course]);
                 }
             }
         }
+        
         vector<bool> result; result.reserve(queries.size());
         for(auto query: queries){
             int u = query[0], v = query[1];
