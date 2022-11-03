@@ -17,10 +17,7 @@ public:
     int maxProfit(vector<int>& prices) {
         vector<int> cache(prices.size(), -1);
         
-        int result = 0;
-        for(int i=0; i<prices.size(); i++){
-            result = max(result, MaxProfit(cache, prices, i));
-        }
+        int result = MaxProfit(cache, prices, 0);
         return result;
     }
 };
