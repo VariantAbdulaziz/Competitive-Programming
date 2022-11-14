@@ -6,7 +6,7 @@ public:
             cur = max(cur + num, num);
             result = max(result, cur);
         }
-        vector<int> prefix(nums.size() + 1), suffix(nums.size() + 1);
+        vector<int> prefix(nums.size() + 1);
         for(int i = 0; i < nums.size(); i++){
             prefix[i+1] = prefix[i] + nums[i];
         }
