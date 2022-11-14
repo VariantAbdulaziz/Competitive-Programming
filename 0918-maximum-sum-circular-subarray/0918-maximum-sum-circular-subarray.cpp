@@ -11,9 +11,10 @@ public:
             prefix[i+1] = prefix[i] + nums[i];
         }
         int max_back = INT_MIN;
+        int sum = 0;
         for(int i = nums.size() -1; i >= 0; i--){
-            suffix[i] = suffix[i+1] + nums[i];
-            max_back = max(max_back, suffix[i]);
+            sum += nums[i];
+            max_back = max(max_back, sum);
             result = max(result, max_back + prefix[i]);
         }
         return result;
