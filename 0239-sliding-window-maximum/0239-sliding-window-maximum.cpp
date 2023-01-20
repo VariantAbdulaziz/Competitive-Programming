@@ -8,7 +8,7 @@ public:
             while(!window.empty() && nums[window.back()] <= nums[r])
                 window.pop_back();
             window.push_back(r);
-            if(!window.empty() && window.front() < r - k + 1) window.pop_front();
+            if(window.front() < r - k + 1) window.pop_front();
             if(r >= k-1) result.push_back(nums[window.front()]);
         }
         return result;
