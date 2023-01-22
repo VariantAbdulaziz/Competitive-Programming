@@ -2,7 +2,7 @@ class Solution {
 public:
     bool PredictTheWinner(vector<int>& nums) {
         int N = nums.size();
-        vector<vector<vector<long>>> dp(N, vector<vector<int64_t>>(N, {0, 0}));
+        vector<vector<vector<int>>> dp(N, vector<vector<int>>(N, {0, 0}));
         for(int len = 1; len <= N; len++){
             for(int l = 0; l + len <= N; l++){
                 for(int turn = 0; turn < 2; turn++){
@@ -17,10 +17,10 @@ public:
                 }
             }
         }
-        long total = 0;
+        int total = 0;
         for(auto num: nums) total += num;
-        long player_one_score = dp[0][N-1][1];
-        long player_two_score = total - player_one_score;
+        int player_one_score = dp[0][N-1][1];
+        int player_two_score = total - player_one_score;
         return player_one_score >= player_two_score;
     }
 };
