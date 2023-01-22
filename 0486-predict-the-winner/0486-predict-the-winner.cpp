@@ -1,21 +1,26 @@
 class Solution {
 public:
-    int dp(vector<vector<vector<int>>>& cache, vector<int>&nums, int l, int r, int turn){
-            if(r < l) return 0;
-            
-            auto& res = cache[l][r][turn];
-            if(res != -1) return res;
-            if(turn) return max(nums[l] + dp(cache, nums, l+1, r, !turn), nums[r] + dp(cache, nums, l, r-1, !turn));
-            
-            return min(dp(cache, nums, l+1, r, !turn), dp(cache, nums, l, r-1, !turn));
-    }
     bool PredictTheWinner(vector<int>& nums) {
-        int n = nums.size();
-        vector<vector<vector<int>>> cache(n, vector<vector<int>>(n, {-1, -1}));
-        int total = 0;
-        for(int ni: nums) total += ni;
-        int score = dp(cache, nums, 0, n-1, 1);
-        int anti_score = total - score;
-        return score >= anti_score? true: false;
+        int N = nums.size();
+        vector<vector<vector<int64_t>>> dp(N, vector<vector<int64_t>>(N, {0, 0}));
+        for(int len = 1; len <= N; len++){
+            for(int l = 0; l + len <= N; l++){
+                for(int turn = 0; turn < 2; turn++){
+                    int r = l + len - 1;
+                    if(l == r){
+                        dp[l][r][turn] = turn? nums[l]: 0;
+                    } else if (turn){
+                        dp[l][r][turn] = max(nums[l] + dp[l+1][r][!turn], nums[r] + dp[l][r-1][!turn]);
+                    } else{
+                        dp[l][r][turn] = min(dp[l+1][r][!turn], dp[l][r-1][!turn]);
+                    }
+                }
+            }
+        }
+        int64_t total = 0;
+        for(auto num: nums) total += num;
+        int64_t player_one_score = dp[0][N-1][1];
+        int64_t player_two_score = total - player_one_score;
+        return player_one_score >= player_two_score;
     }
 };
