@@ -1,6 +1,6 @@
 class UndergroundSystem {
     map<int, pair<int, string>> check_in;
-    map<pair<string, string>, vector<int>> journey_times;
+    map<pair<string, string>, pair<double, int>> journey_times;
     
     double sum(vector<int>& journeys){
         double result = 0.0;
@@ -19,11 +19,17 @@ public:
     void checkOut(int id, string stationName, int t) {
         auto [start, startStation] = check_in[id];
         int journey = t - start;
-        journey_times[make_pair(startStation, stationName)].push_back(journey);
+        auto& stat_loc = journey_times[make_pair(startStation, stationName)];
+        
+        stat_loc.first += journey;
+        stat_loc.second++;
+        
     }
     
     double getAverageTime(string startStation, string endStation) {
-        return sum(journey_times[make_pair(startStation, endStation)]) / journey_times[make_pair(startStation, endStation)].size();
+        auto& stat_loc = journey_times[make_pair(startStation, endStation)];
+        
+        return stat_loc.first / stat_loc.second;
     }
 };
 
