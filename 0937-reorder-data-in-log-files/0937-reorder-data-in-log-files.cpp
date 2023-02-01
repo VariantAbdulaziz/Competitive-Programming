@@ -14,7 +14,7 @@ public:
             }
             seeker--;
         }
-        sort(begin(logs), end(logs) - (N - holder - 1), [](auto a, auto b){
+        sort(begin(logs), end(logs) - (N - holder - 1), [](auto &a, auto &b){
             stringstream ssa(a), ssb(b);
             string identifier_a, identifier_b, content_a, content_b;
             ssa >> identifier_a;
