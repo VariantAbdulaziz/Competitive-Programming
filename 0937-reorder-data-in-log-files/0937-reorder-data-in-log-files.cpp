@@ -8,7 +8,7 @@ public:
             stringstream ss(logs[seeker]);
             ss >> identifier;
             ss >> word;
-            if(isdigit(word[0])){
+            if(all_of(word.begin(), word.end(), ::isdigit)){
                 swap(logs[holder], logs[seeker]);
                 holder--;
             }
