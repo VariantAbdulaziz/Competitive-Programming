@@ -2,8 +2,8 @@ class Solution {
 public:
     vector<string> reorderLogFiles(vector<string>& logs) {
         int N = logs.size();
-        int seeker = N - 1, holder = N - 1;
-        while(seeker >= 0){
+        int holder = N - 1;
+        for(int seeker = N - 1; seeker >= 0; seeker--){
             string identifier, word;
             stringstream ss(logs[seeker]);
             ss >> identifier;
@@ -12,7 +12,6 @@ public:
                 swap(logs[holder], logs[seeker]);
                 holder--;
             }
-            seeker--;
         }
         sort(begin(logs), end(logs) - (N - holder - 1), [](auto &a, auto &b){
             stringstream ssa(a), ssb(b);
