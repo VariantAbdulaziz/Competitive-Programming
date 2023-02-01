@@ -1,12 +1,11 @@
 class Solution {
 public:
     int minimumOperations(vector<int>& nums) {
-        priority_queue<int, vector<int>, greater<>> q(begin(nums), end(nums));
-        
+        int N = nums.size();
+        sort(begin(nums), end(nums));        
         int already_substracted = 0, minimum_operations = 0;
-        while(!q.empty()) {
-            int x = q.top() - already_substracted;
-            q.pop();
+        for(int i = 0; i < N; i++) {
+            int x = nums[i] - already_substracted;
             if(x > 0) {
                 minimum_operations++;
             }
