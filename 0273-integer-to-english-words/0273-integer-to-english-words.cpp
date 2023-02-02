@@ -5,10 +5,12 @@ class Solution {
         "Twelve", "Thirteen", "Fourteen", "Fifteen", 
         "Sixteen", "Seventeen", "Eighteen", "Nineteen",
     };
+    map<int, string> tens = {
+        {20, "Twenty"}, {30, "Thirty"}, {40, "Forty"}, {50, "Fifty"},
+        {60, "Sixty"}, {70, "Seventy"}, {80, "Eighty"}, {90, "Ninety"}
+    };
     map<int, string> higher_order = {
-        {20, "Twenty"}, {30, "Thirty"}, {40, "Forty"}, {50, "Fifty"}, {60, "Sixty"},
-        {70, "Seventy"}, {80, "Eighty"}, {90, "Ninety"}, {2, "Hundred"},
-        {3, "Thousand"},{6, "Million"}, {9, "Billion"}
+        {2, "Hundred"}, {3, "Thousand"},{6, "Million"}, {9, "Billion"}
     };
 public:
     string numberToWords(int num) {
@@ -17,7 +19,7 @@ public:
         }
         string num_ = to_string(num);
         if(num < 100){
-            return higher_order[(num_[0] - '0') * 10] + 
+            return tens[(num_[0] - '0') * 10] + 
                     (num_[1] == '0'? "" : " " + numberToWords(num % 10));
         }
         
