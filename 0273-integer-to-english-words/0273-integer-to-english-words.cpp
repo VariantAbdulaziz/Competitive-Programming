@@ -5,11 +5,11 @@ class Solution {
         "Twelve", "Thirteen", "Fourteen", "Fifteen", 
         "Sixteen", "Seventeen", "Eighteen", "Nineteen",
     };
-    unordered_map<int, string> tens = {
+    map<int, string> tens = {
         {20, "Twenty"}, {30, "Thirty"}, {40, "Forty"}, {50, "Fifty"},
         {60, "Sixty"}, {70, "Seventy"}, {80, "Eighty"}, {90, "Ninety"}
     };
-    unordered_map<int, string> higher_order = {
+    map<int, string> higher_order = {
         {2, "Hundred"}, {3, "Thousand"},{6, "Million"}, {9, "Billion"}
     };
 public:
