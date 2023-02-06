@@ -3,11 +3,11 @@ const int inf = 1e9;
 class Solution {
 public:
     int racecar(int target) {
-        priority_queue<tuple<int, long, int>, vector<tuple<int, long, int>>, greater<>> q;
+        queue<tuple<int, long, int>> q;
         
         q.push({0, 1, 0});
         while(!q.empty()) {
-            auto [steps, speed, pos] = q.top();
+            auto [steps, speed, pos] = q.front();
             q.pop();
             if (pos == target) return steps;
             q.push({steps + 1, speed * 2, pos + speed});
