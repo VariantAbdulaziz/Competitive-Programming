@@ -18,6 +18,7 @@ class Solution {
     }
 public:
     int numBusesToDestination(vector<vector<int>>& routes, int source, int target) {
+        if (source == target) return 0;
         int n = routes.size();
         vector<vector<int>> adj(n + 1);
         vector<int> cache(n + 1, -1), source_routes;
@@ -38,10 +39,6 @@ public:
         }
         int result = inf;
         for(auto s : source_routes) {
-            if(find(begin(routes[s]), end(routes[s]), target) != routes[s].end()
-              && source == target) {
-                return 0;
-            }
             result = min(result, dfs(cache, adj, routes, s, target));
         }
         return result >= inf? -1: result;
