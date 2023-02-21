@@ -33,11 +33,12 @@ public:
         while(!recursion_stack.empty()) {
             auto [now, action] = recursion_stack.top();
             recursion_stack.pop();
-            if(action == CALL && now) {
+            if(!now);
+            else if(action == CALL) {
                 recursion_stack.push(make_pair(now->right, CALL));
                 recursion_stack.push(make_pair(now, RESUME));
                 recursion_stack.push(make_pair(now->left, CALL));
-            } else if (action == RESUME && now) {
+            } else {
                 result.push_back(now->val);
             }
         }
