@@ -8,9 +8,6 @@ class Solution:
     def maxSumBST(self, root: Optional[TreeNode]) -> int:
         ans = -float('inf')
         def populate(root):
-            if not root.left and not root.right:
-                return (root.val, True, root.val, root.val, root.val)
-
             curr_sum, curr_is_bst, curr_min, curr_max, ans = root.val, True, root.val, root.val, float('-inf')
             if root.left:
                 left_sum, left_is_bst, left_min, left_max, left_ans = populate(root.left)
