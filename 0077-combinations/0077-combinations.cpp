@@ -1,19 +1,20 @@
 class Solution {
 public:
-    void backtrack(int idx, int start, int n, vector<vector<int>> &result, vector<int> &slots) {
-        if (idx == slots.size()) {
+    void backtrack(int start, int n, int k, vector<vector<int>> &result, vector<int> &slots) {
+        if (slots.size() == k) {
             result.push_back(slots);
             return;
-        }
-        for(int i=start; i<=n; i++) {
-            slots[idx] = i;
-            backtrack(idx + 1, i + 1, n, result, slots);
-        }
+        } else if (n < start) return;
+        
+        slots.push_back(start);
+        backtrack(start + 1, n, k, result, slots);
+        slots.pop_back();
+        backtrack(start + 1, n, k, result, slots);
     }
     vector<vector<int>> combine(int n, int k) {
         vector<vector<int>> result;
-        vector<int> slots(k);
-        backtrack(0, 1, n, result, slots);
+        vector<int> slots;
+        backtrack(1, n, k, result, slots);
         return result;
     }
 };
