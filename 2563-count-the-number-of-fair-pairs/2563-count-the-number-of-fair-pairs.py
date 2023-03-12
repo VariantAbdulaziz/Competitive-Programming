@@ -7,7 +7,7 @@ class Solution:
             for right in range(1, size):
                 while left >= 0 and arr[left] + arr[right] > upper:
                     left -= 1
-                count_ += left
+                count_ += left + 1
                 left += 1
             return count_
 
