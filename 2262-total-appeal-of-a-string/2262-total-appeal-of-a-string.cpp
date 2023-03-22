@@ -9,11 +9,9 @@ public:
             vector<int> values = book;
             sort(begin(values), end(values));
             
-            int appeal = 0;
-            for(int k=26, itr=1; k>0; k--, itr++) {
-                appeal += itr * (values[k] - values[k-1]);
+            for(int k=26, appeal=1; k>0; k--, appeal++) {
+                appeal_sum += appeal * (values[k] - values[k-1]);
             }
-            appeal_sum += appeal;
         }
         return appeal_sum;
     }
