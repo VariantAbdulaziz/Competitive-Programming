@@ -10,7 +10,7 @@ class Solution:
         ans += lower_expected - lower_actual
         
         upper_expected = query * (len(nums) - upper_bound)
-        upper_actual = prefix_sum[-1] - (0 if upper_bound == 0 else prefix_sum[upper_bound])
+        upper_actual = prefix_sum[-1] - prefix_sum[upper_bound]
         ans += upper_actual - upper_expected
         
         return ans
