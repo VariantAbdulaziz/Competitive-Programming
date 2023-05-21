@@ -9,10 +9,9 @@ public:
                 if(l == n || r == m) continue;
                 if (text1[l] == text2[r]) {
                     dp[l+1][r+1] = max(dp[l+1][r+1], dp[l][r] + 1);
-                } else {
-                    dp[l+1][r] = max(dp[l+1][r], dp[l][r]);
-                    dp[l][r+1] = max(dp[l][r+1], dp[l][r]);
                 }
+                dp[l+1][r] = max(dp[l+1][r], dp[l][r]);
+                dp[l][r+1] = max(dp[l][r+1], dp[l][r]);
             }
         }
         return result;
