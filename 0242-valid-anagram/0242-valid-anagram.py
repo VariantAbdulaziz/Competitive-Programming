@@ -1,11 +1,6 @@
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        book = defaultdict(int)
-        for i in range(len(s)):
-            book[s[i]] += 1
-        
-        for i in range(len(t)):
-            book[t[i]] -= 1
-        
-        return all([elem == 0 for elem in book.values()])
+        slist = sorted(s)
+        tlist = sorted(t)
+        return len(s) == len(t) and all([ti == si for ti, si in zip(tlist, slist)])
     
