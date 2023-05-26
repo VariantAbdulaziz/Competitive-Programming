@@ -1,9 +1,15 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        # nums[j] = target - nums[i] 
-        book = defaultdict(int)
+        book = []
         for i in range(len(nums)):
-            comp = target - nums[i]
-            if nums[i] in book:
-                return [book[nums[i]], i]
-            book[comp] = i
+            book.append((nums[i], i))
+            
+        book.sort()
+        lo, hi = 0, len(nums) - 1
+        while lo < hi and book[lo][0] + book[hi][0] != target:
+            if book[lo][0] + book[hi][0] < target:
+                lo += 1
+            else:
+                hi -= 1
+        
+        return [book[lo][1], book[hi][1]]
