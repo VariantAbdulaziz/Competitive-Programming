@@ -12,7 +12,7 @@ class Solution:
             if state in cache:
                 return cache[state]
             
-            cache[state] = float('-inf') if ttype != 1 else 0
+            cache[state] = float('-inf')
             cache[state] = max(cache[state], dp(idx-1, -ttype) + (-fee if ttype == 1 else 0) + ttype * prices[idx])
             cache[state] = max(cache[state], dp(idx-1, ttype))
                 
