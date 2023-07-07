@@ -54,7 +54,6 @@ class MyLinkedList:
         while i < index:
             i += 1
             temp = temp.next
-        print("::", index)
         temp.next = temp.next.next
         self.len -= 1
         
